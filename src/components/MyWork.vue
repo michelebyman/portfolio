@@ -27,7 +27,7 @@
             </div>
             <div class="item">
                 <a href="https://michelebyman.github.io/otherProjects/chestGame/" target="_blank" class="image-link">
-                    <img src="../assets/projects/chestGame.png" alt />
+                    <img src="../assets/projects/chestGame.png" />
                 </a>
                 <div class="icons">
                     <a class="btn btn-dark" href="https://github.com/michelebyman/michelebyman.github.io/tree/master/otherProjects/chestGame" target="_blank">
@@ -96,18 +96,34 @@
                 </div>
             </div>
         </div>
+        <i  @click="navigate($event)" class="fas fa-h-square back"> 
+                              Home</i>
     </div>
 </template>
 
 <script>
-export default {};
+export default {
+        methods: {
+                  navigate() {
+                this.$router.push('/')
+        }
+        }
+};
 </script>
 
 <style scoped>
 .mywork-wrapper {
-    margin-bottom: 4rem;
     padding: 0 1.6rem 0 1.6rem;
 }
+
+  .back {
+            display: block;
+                text-align: center;
+                position: sticky;
+                bottom: 0;
+                background: #4d494d;
+                padding: 1rem 0rem 0.5rem 0rem;     
+    }
 img {
     width: 100%;
     border: 3px solid #fff;

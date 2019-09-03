@@ -49,12 +49,21 @@
                 </p>
             </div>
         </div>
+        <i  @click="navigate($event)" class="fas fa-h-square back"> 
+                              Home</i>
     </div>
 </template>
 
 
 <script>
-export default {};
+export default {
+
+        methods:{
+                      navigate() {
+                this.$router.push('/')
+        }
+        }
+};
 </script>
 
 <style scoped>
@@ -126,6 +135,18 @@ img {
     img {
     margin-top: 1rem;
 }
+
+  .back {
+            display: block;
+                text-align: center;
+                position: sticky;
+                bottom: 0;
+                background: #4d494d;
+                padding: 0.5rem 0rem;
+                /* left: 50%; */
+                /* transform: translate(-50%, -50%)  */
+                
+    }
 }
 
 

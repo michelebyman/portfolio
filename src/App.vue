@@ -15,8 +15,7 @@
             </div>
 
             <div class="center-container">
-                <div class="ipad">
-                    <div class="screen">
+                     <div class="screen">
                         <div class="info-bar">
                             <p class="info-library">
                                 Vue.js
@@ -29,9 +28,11 @@
                             </p>
                         </div>
                         <vue-page-transition name="fade-in-up">
-                            <router-view />
+                            <router-view class="size" />
                         </vue-page-transition>
+                        
                     </div>
+                <div class="ipad">
                     <router-link to="/">
                         <div class="on-off-button">
                             <div v-if="homeScreen" class="light"></div>
@@ -308,10 +309,13 @@ h2 {
 .screen {
     width: 35rem;
     height: 39rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55% );
     background-color: #4d494d;
-
     overflow: auto;
-    position: relative;
+    position: absolute;
+    z-index: 111;
 }
 
 .info-bar {
@@ -364,6 +368,10 @@ h2 {
     font-size: 0.7rem;
 }
 
+.back {
+        display: none;
+}
+
 @keyframes light {
     0% {
         opacity: 0;
@@ -377,18 +385,15 @@ h2 {
 /*  media query  */
 
 @media screen and (max-width: 1025px) {
-    #app {
-        background-color: transparent;
-    }
     .ipad {
-        height: 100vh;
-        width: 100vw;
-        position: relative;
+            display: none;
     }
-
+  
     .screen {
-        width: 95%;
-        height: 89%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100vh;
+    
     }
 
     .info-bar {
@@ -405,6 +410,8 @@ h2 {
         margin: 0rem 0rem 0.5rem 0;
     }
 
+  
+
     .nav-mywork,
     .contact,
     .nav-about {
@@ -413,6 +420,7 @@ h2 {
 
     .lower-backgroundColor {
         display: none;
+
     }
 }
 

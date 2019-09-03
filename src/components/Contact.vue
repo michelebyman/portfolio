@@ -20,10 +20,32 @@
             352 51 Växjö,
             Sweden
         </div>
+         <i  @click="navigate($event)" class="fas fa-h-square back"> 
+                              Home</i>
     </div>
 </template>
 
+<script>
+export default {
+        methods: {
+                      navigate() {
+                this.$router.push('/')
+        }
+        }
+}
+</script>
+
 <style scoped>
+.back {
+            display: block;
+                text-align: center;
+                position: absolute;
+                bottom: 0;
+                background: #4d494d;
+                left: 50%; 
+                 transform: translate(-50%, -50%) 
+                
+    }
 
 
 .contact-wrapper {
